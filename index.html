@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/7c3ac1c87d.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Project 1</title>
+    <style>
+      * {
+        margin: 0;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      nav {
+        overflow: hidden;
+      }
+      nav a,
+      .tonggle {
+        display: inline-block;
+        font-size: 15px;
+        margin: 10px 0;
+        padding: 10px 17px;
+        color: black;
+        background-color: transparent;
+        text-decoration: none;
+        border: none;
+        border-radius: 40px;
+        transition: 0.2s ease-in-out;
+      }
+      .right {
+        font-size: 20px;
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        border: none;
+        background-color: transparent;
+        z-index: 1;
+      }
+      nav a:hover {
+        color: white;
+        background-color: black;
+        border-radius: 40px;
+      }
+      nav > .logo {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 100px;
+        height: 35px;
+      }
+      .hero {
+        position: relative;
+        width: 95vw;
+        height: 90vh;
+        box-sizing: border-box;
+        padding: 60px 75px;
+        border-radius: 20px;
+        margin: 10px auto;
+        color: white;
+      }
+      .hero h1 {
+        font-size: 100px;
+        font-weight: 500;
+        letter-spacing: 5px;
+        text-align: left;
+      }
+      .hero p {
+        font-size: 20px;
+        padding: 20px 0px 50px 0;
+        text-align: left;
+      }
+      .hero > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        z-index: -1;
+      }
+      .Book_button {
+        float: left;
+        font-size: 15px;
+        padding: 15px 80px;
+        text-decoration: none;
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 20px;
+      }
+      .front-btn {
+        position: absolute;
+        left: 150px;
+        bottom: 50px;
+        font-size: 20px;
+        padding: 10px 15px;
+        border: 1px solid white;
+        border-radius: 50%;
+        color: white;
+        background-color: transparent;
+      }
+      .back {
+        text-align: left;
+        left: 75px;
+      }
+      .container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 40px;
+        & > h1 {
+          font-size: 50px;
+          margin: 20px;
+        }
+        & > p {
+          font-size: 20px;
+          margin: 15px;
+        }
+      }
+      .inner-container {
+        width: 75vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .inner-options {
+        flex: 1;
+        max-width: 200px;
+        margin: 10px;
+        padding: 15px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.1s linear;
+      }
+      .inner-options > .logo {
+        font-size: 30px;
+        width: 75px;
+        height: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: whitesmoke;
+      }
+      .inner-options h1 {
+        font-size: 20px;
+        padding: 10px;
+        color: black;
+      }
+      .inner-options p {
+        font-size: 15px;
+      }
+      .inner-options:hover,
+      .tour-container:hover {
+        transform: scale(1.1);
+      }
+
+      .tour-container {
+        position: relative;
+        flex: 1;
+        min-height: 300px;
+        height: auto;
+        margin: 10px;
+        border: 1px solid rgb(170, 162, 162);
+        border-radius: 20px;
+        background-color: white;
+        transition: 0.1s linear;
+        & > h6 {
+          font-size: 17px;
+          text-align: left;
+          margin: 15px 0px 5px 20px;
+        }
+        & > p {
+          font-size: 15px;
+          text-align: left;
+          margin: 5px 0px 5px 20px;
+        }
+        & img {
+          width: 100%;
+          height: 75%;
+          border-radius: 20px;
+        }
+        & > .btn {
+          position: absolute;
+          right: 15px;
+          bottom: 15px;
+          font-size: 15px;
+          padding: 5px 7px;
+          color: white;
+          background-color: black;
+          border: 1px whitesmoke;
+          border-radius: 50%;
+        }
+      }
+      .more-btn {
+        font-size: 15px;
+        padding: 15px 50px;
+        margin: 20px;
+        border: 1px solid black;
+        background-color: transparent;
+        border-radius: 20px;
+      }
+      footer {
+        width: 100%;
+        height: 20px;
+        background-color: olive;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img class="logo" src="LOGO.png" alt="" />
+      <a href="">Our Tours</a>
+      <a href="">About Us</a>
+      <a href="">Booking</a>
+      <a href="">FAQ</a>
+      <button class="tonggle right">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+    <div class="hero">
+      <h1>Explore the sights<br />of the Azores</h1>
+      <p>A place where nature and adventure unite</p>
+      <a class="Book_button" href="">Book Now</a>
+      <button class="front-btn back">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+      <button class="front-btn"><i class="fa-solid fa-arrow-right"></i></button>
+      <img src="img1.jpg" alt="" />
+    </div>
+    <!--Hero container-->
+    <div class="container">
+      <h1>Top values for you</h1>
+      <p>Try variety of benefits when using our services</p>
+      <div class="inner-container">
+        <div class="inner-options">
+          <i class="fa-solid fa-plane logo"></i>
+          <h1>Airport Pickup</h1>
+          <p>We provide escort to airport to the hotel</p>
+        </div>
+        <div class="inner-options">
+          <i class="fa-solid fa-wallet logo"></i>
+          <h1>Easy Booking</h1>
+          <p>Quick and easy booking of tours for upcoming dates</p>
+        </div>
+        <div class="inner-options">
+          <i class="fa-solid fa-users logo"></i>
+          <h1>Best tour guide</h1>
+          <p>Our best tour guide is ready to guide your trip</p>
+        </div>
+        <div class="inner-options">
+          <i class="fa-solid fa-check logo"></i>
+          <h1>Lots of promos</h1>
+          <p>Various promotions and drawing of tours</p>
+        </div>
+      </div>
+    </div>
+    <!--Services-->
+    <div class="container">
+      <h1>Choose your tour</h1>
+      <div class="inner-container">
+        <div class="tour-container">
+          <img src="1.jpg" alt="" />
+          <h6>Alone with nature</h6>
+          <p><b>$100/</b><sub>person</sub></p>
+          <button class="btn"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="tour-container">
+          <img src="3.jpg" alt="" />
+          <h6>Jeep ride</h6>
+          <p><b>$200/</b><sub>person</sub></p>
+          <button class="btn"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="tour-container">
+          <img src="2.jpg" alt="" />
+          <h6>Hiking tour</h6>
+          <p><b>$150/</b><sub>person</sub></p>
+          <button class="btn"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="tour-container">
+          <img src="4.jpg" alt="" />
+          <h6>Corners of the island</h6>
+          <p><b>$220/</b><sub>person</sub></p>
+          <button class="btn"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+      <button class="more-btn">See all</button>
+    </div>
+    <!--Tour Plan-->
+    <footer></footer>
+  </body>
+</html>
